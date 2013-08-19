@@ -103,7 +103,7 @@ int main(int argc,char *argv[])
                perror("sock");
                 exit(1);
         } else {
-                printf("sock sucessful:\n");
+                printf("sock sucessful\n");
         }
         memset(&addr_serv,0,sizeof(addr_serv));
         addr_serv.sin_family = AF_INET;
