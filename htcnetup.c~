@@ -25,6 +25,7 @@ void process_info(int s)
         char recv_buf[4];
 
         /*the first handshaking*/ 
+        printf("begin send 0x00020000:\n");
         send_num = send(s,"\x00\x02\x00\x00",4,0);
         if (send_num < 0){
         	perror("send");
@@ -33,12 +34,14 @@ void process_info(int s)
 		printf("send 0x00020000 sucess!\n");
         }
 
+        printf("begin recv 0x80020000:\n");
         recv_num = recv(s,recv_buf,sizeof(recv_buf),0);
         if(recv_num < 0){
                 perror("recv");
                 exit(1);
         } else {
                 recv_buf[recv_num]='\0';
+                printf("recv sucess:%s\n",recv_buf);
 		if (strcmp(recv_buf, "\x80\x02\x00\x00") != 0){
 			perror("0x80020000 handshaking failure");
                         exit(1);
@@ -46,6 +49,7 @@ void process_info(int s)
 			printf("recv 0x80020000 sucess!\n");
 
 			/*the second handshaking*/ 
+        		printf("begin send 0x00030000:\n");
 			send_num = send(s,"\x00\x03\x00\x00",4,0);
                  	if (send_num < 0){
                           	perror("send");
@@ -57,12 +61,14 @@ void process_info(int s)
 	}
 
 
+	printf("begin recv 0x80030000:\n");
         recv_num = recv(s,recv_buf,sizeof(recv_buf),0);
 	if(recv_num < 0){
                 perror("recv");
                 exit(1);
         } else {
                 recv_buf[recv_num]='\0';
+                printf("recv sucess:%s\n",recv_buf);
 		if (strcmp(recv_buf, "\x80\x03\x00\x00") != 0){
 			perror("0x80030000 handshaking failure");
                         exit(1);
@@ -70,6 +76,7 @@ void process_info(int s)
 			printf("recv 0x80030000 sucess!\n");
 
 			/*the third handshaking*/ 
+        		printf("begin send 0x00050000:\n");
 			send_num = send(s,"\x00\x05\x00\x00",4,0);
                   	if (send_num < 0){
                           	perror("send");
