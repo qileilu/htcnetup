@@ -28,4 +28,4 @@ phoneip=`get_ip`
 echo "IP adress is $phoneip "
 
 #run activater process
-./htcnetup $phoneip
+htcnetup $phoneip

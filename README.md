@@ -7,9 +7,11 @@ How to run
 --------------
 1.make
   
-[to create htcnetup.]
+2.make install
 
-2.sudo ./htcnet.sh
+3.plug in your HTC android phone and enjoy Internet by pass-through.
+
+4.if it don't work,try to run htcnet.sh in terminal.
 
 
 	

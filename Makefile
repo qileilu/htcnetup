@@ -14,14 +14,15 @@ clean :
 	rm -rf htcnetup
 
 install:htcnetup
-@if [ -d $(INSTDIR) ]; \
-then \
-cp htcnetup $(INSTDIR);\
-cp htcnet.sh $(INSTDIR);\
-cp 49-htcpnet.rules /etc/udev/rules.d;\
-chmod a+x $(INSTDIR)/htcnetup;\
-chmod a+x $(INSTDIR)/htcnet.sh;\
-echo “Installed in $(INSTDIR)“;\
-else \
-echo “Sorry, $(INSTDIR) does not exist”;\
-fi
+	@if [ -d $(INSTDIR) ]; \
+	then \
+	cp htcnetup $(INSTDIR);\
+	cp htcnet.sh $(INSTDIR);\
+	cp 49-htcpnet.rules /etc/udev/rules.d;\
+	chmod a+x $(INSTDIR)/htcnetup;\
+	chmod a+x $(INSTDIR)/htcnet.sh;\
+	echo “Installed in $(INSTDIR)“;\
+	echo “If your {idProduct} is not "0fb4", Please change it in /etc/udev/rules.d/49-htcpnet.rules.“;\
+	else \
+	echo “Sorry, $(INSTDIR) does not exist”;\
+	fi
