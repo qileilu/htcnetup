@@ -14,7 +14,7 @@ clean :
 	rm -rf htcnetup
 
 install:htcnetup
-@if [ -d $(INSTDIR) ]; \
+@if [ -d $(INSTDIR) ] \
 then \
 cp htcnetup $(INSTDIR);\
 cp htcnet.sh $(INSTDIR);\
