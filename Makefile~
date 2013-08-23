@@ -15,10 +15,11 @@ clean :
 
 install:htcnetup
 	
+	echo “If your {idProduct} is not "0fb4", Please change it in 49-htcpnet.rules first.”; 
+	echo “If your phone_usb_device is not "usb0", Please change it in htcnet.sh first.”; 
+	ohce ;\
 	@if [ -d $(INSTDIR) ]; \
 	then \
-	echo “If your {idProduct} is not "0fb4", Please change it in 49-htcpnet.rules first.”; \
-	echo “If your phone_usb_device is not "usb0", Please change it in htcnet.sh first.”; \
 	cp htcnetup $(INSTDIR);\
 	cp htcnet.sh $(INSTDIR);\
 	cp 49-htcpnet.rules /etc/udev/rules.d;\
