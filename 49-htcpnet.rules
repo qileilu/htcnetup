@@ -1,1 +1,1 @@
-SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fb4",ACTION=="add", RUN+="/usr/bin/sudo -b /usr/local/bin/htcnet.sh" 
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fb4",ACTION=="add", RUN+="/usr/bin/sudo -b /usr/local/bin/htcnet.sh"
